@@ -1,0 +1,13 @@
+/* linkCond -> usando nos botoes no Cadastro de Condominios */
+.linkCond:link {
+    color: white;
+  }
+.linkCond:visited {
+    color: white;
+  }
+.linkCond:hover {
+    color: white;
+  }
+.linkCond:active {
+    color: white;
+  }
