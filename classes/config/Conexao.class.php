@@ -8,7 +8,7 @@ class Conexao{
 	
 	public function __construct(){
 		//adaptacao para o linux e xamp - conexao com o banco
-		$linux = true;
+		$linux = false;
 		if ($linux == true) {
 			$this->con = new PDO("mysql:host=localhost; dbname=intercom", "root", "M4r4ng0n");		
 		} else {
