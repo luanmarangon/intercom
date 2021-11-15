@@ -20,7 +20,7 @@
 
         public function portarias(){
             try{
-                $sql = "SELECT a.areacomum, a.ramal, c.nome FROM areacomuns a, condominios c WHERE a.areacomum LIKE 'Portaria%' and c.id = a.condominios_id";
+                $sql = "SELECT a.areacomum, a.ramal, c.nome FROM areacomuns a, condominios c WHERE a.areacomum LIKE 'Portaria%' and c.id = a.condominios_id AND c.ativo = 'S'";
                 // $sql = "SELECT * FROM areacomuns WHERE areacomum LIKE 'Portaria%'";
                 $conexao = new Conexao();
                 $p = $conexao->getCon();
