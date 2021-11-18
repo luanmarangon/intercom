@@ -88,17 +88,19 @@
                             $endereco = $objDAO->consultarCodigoEndereços($consulta['id']);
                             // var_dump($endereco);
                             // while ($end = $endereco->fetch(PDO::FETCH_ASSOC)) {
-                                    echo "  <tr>
-                                		<td>" . $endereco["logradouro"] . "</td>
-                                		<td>{$endereco['numero']}</td>
-                                		<td>{$endereco['condominios_id']}</td>
-                                		<td>{$endereco['cidade']}</td>
+									$enderecoList = $endereco->fetchAll(PDO::FETCH_ASSOC);
+									foreach ($enderecoList as $enderecoData){
+										echo "  <tr>
+                                		<td>" . $enderecoData["logradouro"] . "</td>
+                                		<td>{$enderecoData['numero']}</td>
+                                		<td>{$enderecoData['condominios_id']}</td>
+                                		<td>{$enderecoData['cidade']}</td>
                                         <td>
-                                			<a href='AlterarMoradorRamal.php?id={$endereco['grupo']}'>Alterar</a> |
-                                			<a href='InativarUsers.php?id={$endereco['grupo']}'>Status</a>
+                                			<a href='AlterarMoradorRamal.php?id={$enderecoData['grupo']}'>Alterar</a> |
+                                			<a href='InativarUsers.php?id={$enderecoData['grupo']}'>Status</a>
                                 		</td>
                                 	</tr>";
-                            //     }
+									}
                             ?>
                         </tbody>
                     </table>
